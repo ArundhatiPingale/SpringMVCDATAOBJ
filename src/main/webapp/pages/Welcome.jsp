@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>WELCOME FROM FIRST WEB PROJECT </h1>
-Welcome ${name}
+Welcome ${obj.id} , ${obj.name} , ${obj.language}
 </body>
 </html>
