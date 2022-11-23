@@ -1,17 +1,25 @@
 package com.example.demo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
 	
 	@RequestMapping("home")
-	public String Home()
+	public ModelAndView Home(@RequestParam ("name") String myname ,HttpSession session)
 	{
-
-		System.out.println("Calling homes");
-		return "Welcome.jsp";
+		
+		ModelAndView mv=new ModelAndView();
+		mv.addObject("name",myname);
+		mv.setViewName("Welcome");
+		
+		return mv;
 	}
 
 }
